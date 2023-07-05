@@ -1,52 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
+[ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
 
 [node name="Level1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 524, 145 )
-
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( 524, 676 )
-
-[node name="Sprite" type="Sprite" parent="Floor"]
-scale = Vector2( 10, 10 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-visible = false
-scale = Vector2( 32, 32 )
-shape = SubResource( 1 )
-
-[node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 1146, 806 )
-
-[node name="Sprite" type="Sprite" parent="Floor2"]
-scale = Vector2( 10, 10 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-visible = false
-scale = Vector2( 32, 32 )
-shape = SubResource( 1 )
-
-[node name="Floor3" type="StaticBody2D" parent="."]
-position = Vector2( -105, 517 )
-
-[node name="Sprite" type="Sprite" parent="Floor3"]
-scale = Vector2( 10, 10 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-visible = false
-scale = Vector2( 32, 32 )
-shape = SubResource( 1 )
+collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 517, 308 )
-current = true
 zoom = Vector2( 2, 2 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -458720, 5, 0, -262127, 4, 0, -196549, 0, 0, -130987, 3, 0, 38, 1, 0, 65592, 1, 0, 131142, 3, 0, 196620, 0, 0, 262174, 1, 0, 327681, 0, 0, 327729, 1, 0, 458770, 0, 0, 524328, 2, 0, 524350, 3, 0, 589908, 3, 0, 655365, 0, 0, 720920, 0, 0, 786505, 3, 0, 983040, 2, 0, 983046, 2, 0, 983054, 3, 0, 983058, 2, 0, 983066, 2, 0, 983072, 3, 0, 983077, 2, 0, 983083, 2, 0, 983089, 2, 0, 983095, 2, 0, 983101, 2, 0, 983107, 2, 0, 983113, 2, 0, 983119, 2, 0, 983125, 2, 0, 983131, 2, 0, 1114123, 2, 0, 1114140, 2, 0, 1114146, 2, 0, 1179670, 2, 0, 1245200, 2, 0 )
