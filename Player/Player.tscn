@@ -19,9 +19,11 @@ shape = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1000, 0 )
 current = true
 zoom = Vector2( 3, 3 )
 limit_left = 0
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
